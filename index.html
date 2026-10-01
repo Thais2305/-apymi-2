@@ -1,41 +1,73 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ÑAPYMI Racing Team</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ÑAPYMI - Robótica Submarina</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial;background:#eef5ff;color:#0A1931}
-header{background:#0A1931;color:white;text-align:center;padding:40px 20px}
-.logo{font-size:44px;font-weight:900;color:#4CC9F0;border:3px solid #D4AF37;display:inline-block;padding:10px 28px;border-radius:50px}
-nav{margin-top:20px} nav a{color:#4CC9F0;margin:0 10px;text-decoration:none;font-weight:bold}
-section{background:white;margin:20px auto;max-width:900px;padding:22px;border-radius:14px;box-shadow:0 4px 10px rgba(0,0,0,.1)}
-h2{border-left:6px solid #4CC9F0;padding-left:10px;margin-bottom:12px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.card{border:1px solid #cce0ff;padding:14px;border-radius:10px}
-.destaque{grid-column:span 2;background:#0A1931;color:white}
-footer{background:#0A1931;color:white;text-align:center;padding:18px}
+:root{--navy:#0A1931;--blue:#0E4D92;--yellow:#FFC300;--bg:#f4f7fb}
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui}
+body{background:var(--navy)}
+.header{background:var(--navy);text-align:center;padding:18px 12px 8px;position:sticky;top:0;z-index:10}
+.logo{height:58px}
+.nav{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin:14px 0 0}
+.nav button{background:#142a4d;color:#7fb3ff;border:none;padding:8px 14px;border-radius:20px;font-weight:700;font-size:13px}
+.nav button.active{background:var(--yellow);color:var(--navy)}
+.hero{text-align:center;padding:20px 16px;background:radial-gradient(circle at center,#123766,#08162e)}
+.hero-img{width:280px;height:280px;object-fit:contain;border-radius:50%;background:#0a2342;border:2px solid rgba(255,195,0,.3)}
+.hero h2{color:white;margin:14px 0 6px;font-size:18px}
+.hero p{color:#b8d0ef;font-size:14px}
+.hero .btn{background:var(--yellow);color:var(--navy);border:none;padding:12px 22px;border-radius:24px;font-weight:900;margin-top:12px}
+.container{max-width:700px;margin:0 auto}
+.card{background:white;border-radius:18px;padding:18px;margin:12px;display:none}
+.card.show{display:block}
+.shop-title{background:#e8eef6;padding:16px 18px;font-weight:900;color:var(--navy);font-size:20px}
+.item{display:flex;gap:12px;align-items:center;background:white;border-radius:14px;padding:12px;margin:10px 12px}
+.item img{width:80px;height:80px;object-fit:contain;background:#f4f7fb;border-radius:10px}
+.item b{color:var(--navy);display:block}
+.item .price{color:var(--navy);font-weight:900;margin-top:4px}
+.item .buy{margin-left:auto;background:var(--yellow);border:none;padding:8px 12px;border-radius:8px;font-weight:800}
 </style>
 </head>
 <body>
-<header>
-<div class="logo">ÑAPYMI</div>
-<p>RACING TEAM - Robótica Subaquática</p>
-<nav><a href="#c">Conceito</a><a href="#id">Identidade</a><a href="#pat">Patrocínio</a><a href="#est">Estrutura</a></nav>
-</header>
-<section id="c"><h2>1 - Conceito</h2><p>ÑAPYMI é equipe de alta performance de ROVs (veículos subaquáticos) unindo tecnologia, oceano e formação de talentos. Nome vem do tupi: trabalho coletivo.</p></section>
-<section id="id"><h2>2 - Identidade Visual</h2><p><b>Cores:</b> Azul Marinho Antichamas #0A1931, Azul Claro #4CC9F0, Dourado #D4AF37<br><b>Mascote:</b> Siri azul com boné, óculos e chave de boca<br><b>Uniforme:</b> Frente ÑAPYMI + PaleBlue, Costas Nome + Siri, Barra patrocinadores</p></section>
-<section id="pat"><h2>3 e 4 - Patrocínio e Visibilidade</h2><p><b>Patrocinadores:</b> Governo RJ, 1001 Transportes, Monster Energy, PaleBlue</p><p>Visibilidade em uniforme antichamas, site, Instagram, carro e box.</p></section>
-<section id="est"><h2>5 e 8 - Pessoas e Estrutura</h2>
-<div class="grid">
-<div class="card"><b>Pessoas e Cultura</b><br>RH, diversidade, ciclo do membro</div>
-<div class="card"><b>Negócios</b><br>Captação, financeiro</div>
-<div class="card"><b>Marca</b><br>Comunicação e design</div>
-<div class="card destaque"><b>Núcleo Técnico do Submarino</b><br>Mecânica: estrutura e vedação | Elétrica: bateria e motores | Software: controle e câmera</div>
+<div class="header">
+<img class="logo" src="logo.png">
+<div class="nav">
+<button class="active" onclick="openTab('conceito',this)">Conceito</button>
+<button onclick="openTab('identidade',this)">Identidade</button>
+<button onclick="openTab('patrocinio',this)">Patrocínio</button>
+<button onclick="openTab('estrutura',this)">Estrutura</button>
+<button onclick="openTab('loja',this)">Loja</button>
 </div>
-</section>
-<section><h2>7 - Financeiro 12 meses</h2><p>Investimento: R$15.000 em ROV + R$5.000 em competições. Fonte: patrocínios e editais.</p></section>
-<section><h2>6 - Produto Digital</h2><p>Este site é o produto digital da equipe, hospedado no GitHub Pages, atendendo o item 6 da Imersão.</p></section>
-<footer>ÑAPYMI Racing Team - 2024 | GitHub Pages</footer>
+</div>
+
+<div class="hero">
+<img class="hero-img" src="hero.png">
+<h2>Mergulhando em ideias,<br>emergindo soluções</h2>
+<p>Equipe ÑAPYMI - Robótica Submarina • Duque de Caxias</p>
+<button class="btn">Conheça o Projeto</button>
+</div>
+
+<div class="container">
+<div id="conceito" class="card show"><h3>Conceito</h3><p>ROV submarino de alta performance feito por alunos. Missão: vencer competições e formar talentos.</p></div>
+<div id="identidade" class="card"><h3>Identidade</h3><p>Logo oval azul, Siri mascote mergulhador com chave inglesa, cores azul marinho e amarelo.</p></div>
+<div id="patrocinio" class="card"><h3>Patrocínio</h3><p>Governo RJ, 1001 Transportes, Monster, PaleBlue. Sua marca no uniforme, site e box.</p></div>
+<div id="estrutura" class="card"><h3>Estrutura</h3><p>Mecânica, Elétrica, Software, Piloto, Marketing. Lab com impressora 3D e tanque de testes.</p></div>
+</div>
+
+<div class="shop-title">Nossa Loja 🛒</div>
+<div class="item"><img src="bone.png"><div><b>Boné Trucker ÑAPYMI</b><small>Azul marinho bordado amarelo</small><div class="price">R$ 89,90</div></div><button class="buy">Adicionar</button></div>
+<div class="item"><img src="camisa.png"><div><b>Camiseta ÑAPYMI</b><small>100% algodão estampa submarina</small><div class="price">R$ 65,00</div></div><button class="buy">Adicionar</button></div>
+<div class="item"><img src="chaveiro.png"><div><b>Chaveiro Crab ÑAPYMI</b><small>Acrílico colecionável</small><div class="price">R$ 32,90</div></div><button class="buy">Adicionar</button></div>
+
+<script>
+function openTab(id,btn){
+document.querySelectorAll('.card').forEach(c=>c.classList.remove('show'));
+if(document.getElementById(id)) document.getElementById(id).classList.add('show');
+document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));
+btn.classList.add('active');
+window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
 </body>
 </html>
