@@ -1,39 +1,27 @@
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ÑAPYMI UFRJ</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#071A32;font-family:system-ui}
-.header{background:#071A32;text-align:center;padding:14px 8px;position:sticky;top:0;z-index:99}
-.logo{height:55px}
-.nav{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:12px}
-.nav button{background:#11294d;color:#7fb3ff;border:none;padding:8px 13px;border-radius:20px;font-weight:700;font-size:13px;cursor:pointer}
-.nav button.active{background:#FFC300;color:#071A32}
-.tab{display:none;max-width:520px;margin:0 auto}
-.tab.active{display:block}
-.tab img{width:100%;display:block}
-</style>
+<title>NAPYMI</title>
+<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#071A32;font-family:system-ui}.header{background:#071A32;text-align:center;padding:12px;position:sticky;top:0;z-index:99}.logo{height:55px}.nav{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:10px}.nav button{background:#11294d;color:#7fb3ff;border:none;padding:8px 13px;border-radius:20px;font-weight:700;font-size:13px}.nav button.active{background:#FFC300;color:#071A32}.tab{display:none;max-width:520px;margin:0 auto}.tab.active{display:block}.tab img{width:100%}</style>
 </head>
 <body>
 <div class="header">
-<img class="logo" src="logo_oficial.png">
+<img class="logo" src="./logo.jpg">
 <div class="nav">
 <button class="active" onclick="openTab('loja',this)">Loja</button>
 <button onclick="openTab('escolas',this)">NAPYMI nas Escolas</button>
-<button onclick="openTab('patrocinio',this)">Patrocínio</button>
+<button onclick="openTab('patrocinio',this)">Patrocinio</button>
 <button onclick="openTab('identidade',this)">Identidade</button>
 <button onclick="openTab('conceito',this)">Conceito</button>
 </div>
 </div>
-<div id="loja" class="tab active"><img src="loja_full.png"></div>
-<div id="escolas" class="tab"><img src="escolas_full.png"></div>
-<div id="patrocinio" class="tab"><img src="patrocinio_full.png"></div>
-<div id="identidade" class="tab"><img src="identidade_full.png"></div>
-<div id="conceito" class="tab"><img src="conceito_full.png"></div>
-<script>
-function openTab(id,btn){
-document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-document.getElementById(id).classList.add('active');
-document.querySelectorAll('.nav button').
+<div id="loja" class="tab active"><img src="./loja.jpg"></div>
+<div id="escolas" class="tab"><img src="./projeto.jpg"></div>
+<div id="patrocinio" class="tab"><img src="./patrocinio.jpg"></div>
+<div id="identidade" class="tab"><img src="./iden.jpg"></div>
+<div id="conceito" class="tab"><img src="./conceito.jpg"></div>
+<script>function openTab(id,btn){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}</script>
+</body>
+</html>
