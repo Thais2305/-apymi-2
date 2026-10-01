@@ -1,23 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NAPYMI</title>
-<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#071A32;font-family:system-ui}.header{background:#071A32;text-align:center;padding:12px;position:sticky;top:0;z-index:99}.logo{height:55px}.nav{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:10px}.nav button{background:#11294d;color:#7fb3ff;border:none;padding:8px 13px;border-radius:20px;font-weight:700;font-size:13px}.nav button.active{background:#FFC300;color:#071A32}.tab{display:none;max-width:520px;margin:0 auto}.tab.active{display:block}.tab img{width:100%}</style>
+<title>NAPYMI - Equipe de Competição UFRJ</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#0a1931}
+.topo{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:#fff;position:sticky;top:0;z-index:999;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.topo img{height:38px;object-fit:contain}nav{display:flex;gap:5px;flex-wrap:wrap}nav button{border:1px solid #ddd;background:#fff;padding:6px 10px;border-radius:20px;font-size:11px;font-weight:800;cursor:pointer}
+.secao{display:none;padding:14px;max-width:600px;margin:auto}.secao.ativa{display:block}
+.card{background:#fff;border-radius:18px;padding:16px;box-shadow:0 4px 20px rgba(0,0,0,.06);margin-bottom:14px;text-align:center}
+.logoG{width:200px;max-width:80%;margin:auto;display:block}
+.btn{width:100%;background:#0a1931;color:#fff;border:none;padding:14px;border-radius:30px;font-weight:900;cursor:pointer;margin-top:10px}
+.btnY{width:100%;background:#ffcc33;color:#0a1931;border:none;padding:16px;border-radius:30px;font-weight:900;cursor:pointer;margin-top:12px;display:block;text-align:center;text-decoration:none}
+.prod{border:1px solid #eee;border-radius:12px;padding:8px;background:#fff}
+input{width:100%;padding:10px;border-radius:10px;border:1px solid #ccc;margin:6px 0}
+#escolas.ativa{max-width:100%;width:100vw;min-height:100vh;background:#0a1931;margin:0;padding:0}
+</style>
 </head>
 <body>
-<div class="header">
-<img class="logo" src="./logo.jpg">
-<div class="nav">
-<button class="active" onclick="openTab('loja',this)">Loja</button>
-<button onclick="openTab('escolas',this)">NAPYMI nas Escolas</button>
-<button onclick="openTab('patrocinio',this)">Patrocinio</button>
-<button onclick="openTab('identidade',this)">Identidade</button>
-<button onclick="openTab('conceito',this)">Conceito</button>
+
+<header class="topo">
+<img src="logo.png" onerror="this.src='logo'" alt="NAPYMI">
+<nav>
+<button onclick="ir('conceito')">Conceito</button>
+<button onclick="ir('identidade')">Identidade</button>
+<button onclick="ir('patrocinio')">Patrocínio</button>
+<button onclick="ir('loja')">Loja</button>
+<button onclick="ir('escolas')">Escolas</button>
+</nav>
+</header>
+
+<!-- ABA 1: CONCEITO - EQUIPE DE COMPETIÇÃO -->
+<section id="conceito" class="secao ativa">
+<div class="card">
+<img src="logo.png" onerror="this.src='logo'" class="logoG">
+<p style="font-size:11px;letter-spacing:1px;opacity:.6;font-weight:800;margin:4px 0">EQUIPE DE COMPETIÇÃO • ENGENHARIA UFRJ</p>
+<h1 style="line-height:1.1;margin:10px 0">Mergulhando em ideias,<br>emergindo soluções.</h1>
+<p style="text-align:left;font-size:13px;line-height:1.5;color:#444">Somos uma <b>equipe de competição da UFRJ</b> focada no projeto e construção de ROVs - Veículos Operados Remotamente. Representamos a UFRJ em competições nacionais e internacionais de robótica submarina, unindo engenharia mecânica, elétrica e computação.</p>
+<img src="conceito.jpg" style="width:100%;border-radius:12px;margin:12px 0" onerror="this.style.display='none'">
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:12px 0"><div style="background:#0a1931;color:#fff;padding:10px;border-radius:10px"><b style="color:#ffcc33">ROV</b><br><span style="font-size:10px">100% UFRJ</span></div><div style="background:#0a1931;color:#fff;padding:10px;border-radius:10px"><b style="color:#ffcc33">3</b><br><span style="font-size:10px">Engenharias</span></div><div style="background:#0a1931;color:#fff;padding:10px;border-radius:10px"><b style="color:#ffcc33">MATE</b><br><span style="font-size:10px">Competição</span></div></div>
+<button class="btn" onclick="ir('patrocinio')">Apoie nossa equipe →</button>
+</div>
+</section>
+
+<!-- ABA 2: IDENTIDADE -->
+<section id="identidade" class="secao">
+<div class="card">
+<h2>Identidade Visual</h2>
+<img src="logo.png" onerror="this.src='logo'" class="logoG">
+<p style="font-size:11px;color:#777">Logo principal - oval azul com N laranja</p>
+<div style="text-align:left;margin-top:16px"><b style="font-size:13px">Paleta Oficial</b><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px"><div style="background:#f5f7fb;padding:8px;border-radius:10px;display:flex;gap:8px;align-items:center"><div style="width:28px;height:28px;background:#0a1931;border-radius:6px"></div><span style="font-size:12px">#0A1931 Azul Profundo</span></div><div style="background:#f5f7fb;padding:8px;border-radius:10px;display:flex;gap:8px;align-items:center"><div style="width:28px;height:28px;background:#ffcc33;border-radius:6px"></div><span style="font-size:12px">#FFCC33 Amarelo ROV</span></div></div></div>
+<div style="background:#0a1931;border-radius:18px;padding:14px;margin-top:16px"><img src="mascote.png" onerror="this.src='mascote'" style="width:100%;border-radius:14px"><h3 style="color:#ffcc33;text-align:left;margin:10px 0 4px">Sr. Napy</h3><p style="color:#fff;font-size:12px;text-align:left;margin:0">Mascote oficial - engenheiro mergulhador com colete amarelo NAPYMI e patch oficial. Representa mão na massa.</p></div>
+</div>
+</section>
+
+<!-- ABA 3: PATROCÍNIO -->
+<section id="patrocinio" class="secao">
+<div class="card">
+<h2>Patrocínio</h2>
+<img src="patrocinio.jpg" style="width:100%;border-radius:12px" onerror="this.style.display='none'">
+<p style="text-align:left;font-size:13px;color:#444">Apoie a equipe que leva a UFRJ para competições internacionais de ROV. Sua marca no nosso ROV e uniforme.</p>
+<button class="btn" onclick="window.open('https://wa.me/5521999999999?text=Quero%20patrocinar%20a%20NAPYMI','_blank')">Falar sobre patrocínio</button>
+</div>
+</section>
+
+<!-- ABA 4: LOJA COM CARRINHO E FRETE -->
+<section id="loja" class="secao">
+<div class="card">
+<h2>Loja NAPYMI</h2>
+<div style="text-align:right;font-weight:800;font-size:13px" id="cart-count" onclick="verCart()">🛒 0 itens - Ver carrinho</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px">
+<div class="prod"><img src="blusa.jpg" style="width:100%;border-radius:8px"><p><b>Blusa</b><br>R$89,90</p><button class="btn" style="padding:8px;font-size:12px" onclick="add('Blusa NAPYMI',89.9)">Adicionar</button></div>
+<div class="prod"><img src="bone.jpg" style="width:100%;border-radius:8px"><p><b>Boné</b><br>R$59,90</p><button class="btn" style="padding:8px;font-size:12px" onclick="add('Boné NAPYMI',59.9)">Adicionar</button></div>
+<div class="prod"><img src="chaveiro.jpg" style="width:100%;border-radius:8px"><p><b>Chaveiro ROV</b><br>R$24,90</p><button class="btn" style="padding:8px;font-size:12px" onclick="add('Chaveiro',24.9)">Adicionar</button></div>
 </div>
 </div>
-<div id="loja" class="tab active"><img src="./loja.jpg"></div>
-<div id="escolas" class="tab"><img src="./projeto.jpg"></div>
-<div id="patrocinio" class="tab"><img src="./patrocinio.jpg"></div>
-<div id="identidade" class="tab"><img src="./iden.jpg"></div>
-<div id="conceito" class="tab"><img src="./conceito.jpg"></div>
-<script>function openTab(id,btn){document.querySelectorAll('.tab').
+<div class="card" id="cartCard" style="display:none;text-align:left">
+<h3>Seu Carrinho</h3><div id="cart-itens"></div><hr>
+<div style="display:flex;gap:6px"><input id="cep" placeholder="CEP 00000-000" style="flex:1"><button class="btn" style="width:auto;margin:0;padding:10px 14px" onclick="calcFrete()">Frete</button></div>
+<p id="frete-txt" style="font-size:11px"></p><p>Subtotal R$ <span id="sub">0.00</span><br>Frete R$ <span id="fre">0.00</span><br><b>Total R$ <span id="tot">0.00</span></b></p>
+<button class="btnY" onclick="finalizar()">Finalizar no WhatsApp</button>
+<button class="btn" style="background:#eee;color:#333" onclick="limpar()">Limpar</button>
+</div>
+</section>
+
+<!-- ABA 5: ESCOLAS - FULL PAGE 100/5/10 -->
+<section id="escolas" class="secao">
+<div style="background:#0a1931;color:#fff;min-height:100vh">
+<div style="text-align:center;padding:22px;background:linear-gradient(180deg,#123a7a 0%,#0a1931 100%)">
+<img src="logo.png" onerror="this.src='logo'" style="width:160px;background:#ffcc33;border-radius:30px;padding:6px 14px">
+<h2 style="color:#ffcc33;margin:12px 0 0">NAPYMI nas Escolas</h2>
+<p style="font-size:13px;opacity:.9;margin:4px 0">Projeto Social • Educação e Sustentabilidade Marinha</p>
+<img src="mascote.png" onerror="this.src='mascote'" style="width:110px;border-radius:16px;border:3px solid #ffcc33;margin-top:12px">
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:14px">
+<div style="border:3px solid #ffcc33;border-radius:16px;padding:12px;text-align:center"><div style="font-size:22px">🎓</div><b style="color:#ffcc33;font-size:24px">100+</b><br><span style="font-size:11px">alunos impactados</span></div>
+<div style="border:3px solid #ffcc33;border-radius:16px;padding:12px;text-align:center"><div style="font-size:22px">🏫</div><b style="color:#ffcc33;font-size:24px">5+</b><br><span style="font-size:11px">escolas públicas</span></div>
+<div style="border:3px solid #ffcc33;border-radius:16px;padding:12px;text-align:center"><div style="font-size:22px">🤝</div><b style="color:#ffcc33;font-size:24px">10+</b><br><span style="font-size:11px">voluntários ativos</span></div>
+</div>
+<div style="padding:16px">
+<p style="font-size:12px;text-align:left;line-height:1.4">🤖 <b>Palestras de Robótica</b> - tecnologia e programação<br><br>🐠 <b>Oficinas Vida Marinha</b> - ecossistema e conservação<br><br>📦 <b>Brinquedos Educativos</b> - jogos pedagógicos</p>
+<h4 style="color:#ffcc33;text-align:center;margin:16px 0 10px">CONHEÇA NOSSOS BRINQUEDOS</h4>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><div style="background:#fff;color:#0a1931;border-radius:14px;padding:10px"><img src="escola.jpg" style="width:100%;border-radius:10px"><p style="font-size:11px;font-weight:900;background:#ffcc33;border-radius:20px;padding:6px;margin:6px 0 0">Quebra-cabeça 60 peças</p></div><div style="background:#fff;color:#0a1931;border-radius:14px;padding:10px"><img src="loja.jpg" style="width:100%;border-radius:10px"><p style="font-size:11px;font-weight:900;background:#ffcc33;border-radius:20px;padding:6px;margin:6px 0 0">Memória 32 Cartas</p></div></div>
+<a href="https://wa.me/5521999999999?text=Oi%20NAPYMI!%20Quero%20ser%20voluntario%20nas%20escolas%20%F0%9F%99%8B" target="_blank" class="btnY" style="background:#25D366">🙋 Quero Participar como Voluntário</a>
+<a href="https://wa.me/5521999999999?text=Quero%20patrocinar%20NAPYMI%20nas%20Escolas" target="_blank" class="btnY" style="background:#fff;border:2px solid #ffcc33">♡ Quero Patrocinar Este Projeto</a>
+<p style="font-size:10px;text-align:center;opacity:.5;margin-top:12px">© 2024 NAPYMI nas Escolas • Sem fins lucrativos</p>
+</div>
+</div>
+</section>
+
+<script>
+function ir(id){document.querySelectorAll('.secao').forEach(s=>s.classList.remove('ativa'));document.getElementById(id).classList.add('ativa');window.scrollTo(0,0)}
+let cart=JSON.parse(localStorage.getItem('napymi')||'[]');let fv=0;
+function save(){localStorage.setItem('napymi',JSON.stringify(cart));up()}
+function add(n,p){let i=cart.find(x=>x.n==n);if(i)i.q++;else cart.push({n,p,q:1});save();verCart()}
+function up(){let c=cart.reduce((a,b)=>a+b.q,0);document.getElementById('cart-count').innerText='🛒 '+c+' itens - Ver carrinho';let s=cart.reduce((a,b)=>a+b.p*b.q,0);document.getElementById('sub').innerText=s.toFixed(2);document.getElementById('fre').innerText=fv.toFixed(2);document.getElementById('tot').innerText=(s+fv).toFixed(2);document.getElementById('cart-itens').innerHTML=cart.map(x=>`<div style="display:flex;justify-content:space-between;margin:6px 0"><span>${x.q}x ${x.n}</span><span>R$${(x.p*x.q).toFixed(2)} <button onclick="rem('${x.n}')" style="border:none;background:none;color:red">x</button></span></div>`).join('')||'<i>vazio</i>'}
+function verCart(){document.getElementById('cartCard').style.display='block';up();document.getElementById('cartCard').scrollIntoView({behavior:'smooth'})}
+function rem(n){cart=cart.filter(x=>x.n!=n);save()}
+function limpar(){cart=[];fv=0;save();document.getElementById('cartCard').style.display='none'}
+function calcFrete(){let cep=document.getElementById('cep').value.replace(/\D/g,'');if(cep.length!=8){alert('CEP inválido');return}fv=['20','21','22'].includes(cep.slice(0,2))?15:29.9;if(cart.reduce((a,b)=>a+b.p*b.q,0)>=150)fv=0;document.getElementById('frete-txt').innerText=fv==0?'FRETE GRÁTIS acima de R$150!':(fv==15?'Rio - R$15 / 3 dias / Retirada UFRJ grátis':'Nacional - R$29,90 / 7 dias');up()}
+function finalizar(){if(!cart.length){alert('Carrinho vazio');return}let m='Olá NAPYMI! Quero comprar:%0A'+cart.map(x=>`${x.q}x ${x.n}`).join('%0A')+`%0ATotal R$${(cart.reduce((a,b)=>a+b.p*b.q,0)+fv).toFixed(2)}%0ACEP:${document.getElementById('cep').value}`;window.open('https://wa.me/5521999999999?text='+m,'_blank')}
+up();
+</script>
+</body>
+</html>
